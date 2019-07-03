@@ -1,0 +1,15 @@
+{
+    "lat": "51.5217805",
+    "lon": "-0.162824059130876",
+    "address": {
+        "hotel": "The Landmark",
+        "road": "Melcombe Place",
+        "suburb": "Marylebone",
+        "city": "London",
+        "state_district": "Greater London",
+        "state": "England",
+        "postcode": "NW1 6JR",
+        "country": "UK",
+        "country_code": "gb"
+    }
+}

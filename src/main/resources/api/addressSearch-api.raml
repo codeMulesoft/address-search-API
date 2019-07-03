@@ -1,0 +1,99 @@
+#%RAML 1.0 
+baseUri: https://anypoint.mulesoft.com/mocking/api/v1/links/5a54205b-5a71-47c3-a84c-aa3dbc7ef05d/ # 
+version: v1
+title: addressSearch API
+
+traits:
+  common_errors:
+    !include traits/common_errors.raml
+/address:
+ description: This will return the address details of the given location(for example possible inputs:bangalore,(bangalore,IN),(bangalore,560037))
+ get:
+   queryParameters:
+     location: 
+      description: location you want to search(country code is optional)
+      required: true
+      type: string
+      pattern: ^[0-9A-Za-z-]+
+      minLength: 1
+      example:
+        bangalore
+   responses:
+    200:
+       body:
+         application/json:
+          example:
+            !include responses/address.json
+   is:
+    [common_errors]
+  
+/geographicCoordinates:
+ description: This will return the address details related to the geographic co-ordinates provided.
+ get:
+   queryParameters:
+     lat:
+      description: latitude value(allowed range(+90 to -90))
+      required: true
+      type: number
+      minimum: -90
+      maximum: 90
+      format: double
+      example:
+        51.5217805
+     lon:
+      description: longitude value(allowed range(+180 to -180))
+      required: true
+      type: number
+      minimum: -180
+      maximum: 180
+      format: double
+      example:
+        -0.162824059130876
+     format:
+      description: format of the response(allowed formats (json,xml,html))
+      required: false
+      type: string
+      example:
+        json
+   responses:
+     200:
+       body:
+         application/json:
+          example:
+            !include responses/geographicCoordinates.json
+   is:
+     [common_errors]
+/routes:
+ description: This will return the multiple routes between two different locations provided with a maximum of 2 default routes.
+ get:
+   queryParameters:
+     from: 
+      description: origin/starting point
+      required: true
+      type: string
+      pattern: ^[0-9A-Za-z-]+
+      minLength: 1
+      example:
+        "bangalore"
+     to:
+      description: destination/ending point
+      required: true
+      type: string
+      pattern: ^[0-9A-Za-z-]+
+      minLength: 1
+      example:
+        "hyderabad"
+     maxRoutes:
+      description: maximum possible routes between provided locations
+      required: false
+      type: number
+      default: 2
+   responses:
+     200:
+       body:
+         application/json:
+          example:
+            !include responses/routes.json
+   is:
+     [common_errors]
+           

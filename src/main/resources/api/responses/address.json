@@ -1,0 +1,41 @@
+{
+    "req Loc": [
+        {
+            "location": "bangalore,IN"
+        }
+    ],
+    "locations": [
+        [
+            {
+                "street": "",
+                "adminArea6": "",
+                "adminArea6Type": "Neighborhood",
+                "adminArea5": "Bengaluru",
+                "adminArea5Type": "City",
+                "adminArea4": "Bangalore Urban",
+                "adminArea4Type": "County",
+                "adminArea3": "Karnataka",
+                "adminArea3Type": "State",
+                "adminArea1": "IN",
+                "adminArea1Type": "Country",
+                "postalCode": "",
+                "geocodeQualityCode": "A5XXX",
+                "geocodeQuality": "CITY",
+                "dragPoint": false,
+                "sideOfStreet": "N",
+                "linkId": "0",
+                "unknownInput": "",
+                "type": "s",
+                "latLng": {
+                    "lat": 12.97912,
+                    "lng": 77.5913
+                },
+                "displayLatLng": {
+                    "lat": 12.97912,
+                    "lng": 77.5913
+                }
+               
+            }
+        ]
+    ]
+}

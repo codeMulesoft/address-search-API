@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:validation="http://www.mulesoft.org/schema/mule/validation" xmlns:tls="http://www.mulesoft.org/schema/mule/tls"
+	xmlns:os="http://www.mulesoft.org/schema/mule/os"
+	xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd
+http://www.mulesoft.org/schema/mule/tls http://www.mulesoft.org/schema/mule/tls/current/mule-tls.xsd
+http://www.mulesoft.org/schema/mule/validation http://www.mulesoft.org/schema/mule/validation/current/mule-validation.xsd
+http://www.mulesoft.org/schema/mule/os http://www.mulesoft.org/schema/mule/os/current/mule-os.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d58a7736-c953-4f41-aead-854af9e24683" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="16c4e38c-b6ea-4d12-9444-edfbfe9af9bb">
+		<http:request-connection host="${https.host}" connectionIdleTimeout="${request.timeout}" protocol="HTTPS">
+			<tls:context >
+				<tls:trust-store path="${truststore.path}" password="${secure::truststore.password}" type="jks" insecure="true"/>
+			</tls:context>
+		</http:request-connection>
+	</http:request-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="efbb9d6c-f0d3-4ce2-b8e5-df76b33cd2ab" file="dev.properties" />
+	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="d9d223aa-a9dd-4f74-b97a-b22e3a1ee940" file="dev.properties" key="test123" >
+		<secure-properties:encrypt algorithm="Blowfish" />
+	</secure-properties:config>
+	<os:config name="ObjectStore_Config" doc:name="ObjectStore Config" doc:id="b98d42b8-46c9-4cf7-a882-26fa2df4fb90" />
+	<os:object-store name="Object_store" doc:name="Object store" doc:id="f25962a9-872a-4aef-a743-4916cdd8f9f0" config-ref="ObjectStore_Config" />
+	<validation:config name="Validation_Config" doc:name="Validation Config" doc:id="e918826a-75fb-4f04-ac09-65aec38cdf26" />
+	<flow name="address_searchFlow" doc:id="9e3ffb51-0678-46f9-978a-acb37769fb67" >
+		<set-variable value="#[attributes.queryParams.location]" doc:name="Set Variable" doc:id="c63b9779-cc2a-4af6-a8f4-a06241ec6f55" variableName="location"/>
+		<os:retrieve doc:name="Retrieve" doc:id="3edb352e-8547-40c9-a836-6ec6a09a630b" key="#[vars.location]" objectStore="Object_store" />
+		<logger level="DEBUG" doc:name="Logger" doc:id="3c8bfc24-d1f8-4dfe-af8f-2f2b84b93490" message="Retrieving from store" />
+		<error-handler >
+			<on-error-continue enableNotifications="true" logException="true" doc:name="On Error Continue" doc:id="17b15e6c-1b24-4b21-a359-8b67631c38e4" type="OS:KEY_NOT_FOUND">
+				<http:request method="GET" doc:name="Request" doc:id="77f4d6a1-899e-4c2e-83dc-6c803adb8cb8" config-ref="HTTP_Request_configuration" path="${addressrequest.path}">
+					<http:query-params><![CDATA[#[output application/java
+---
+{
+	"key" : "${secure::key}",
+	"location" : vars.location
+}]]]></http:query-params>
+				</http:request>
+				<ee:transform doc:name="Transform Message" doc:id="cc4456ad-1e1d-4aca-b87c-9fb5cec02192">
+					<ee:message>
+						<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"req Loc": payload.results.providedLocation,
+	"locations" : payload.results.locations
+	
+}
+]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+				<os:store doc:name="Store" doc:id="1f21f1c3-7ced-47d8-86d6-09435468c886" key="#[vars.location]" objectStore="Object_store" />
+				<logger level="DEBUG" doc:name="Logger" doc:id="a0213ed9-35bc-47fd-bcfb-5e63c15f0546" message="getting data from external api" />
+			</on-error-continue>
+		</error-handler>
+	</flow>
+	<flow name="geographicCoordinatesFlow" doc:id="c700f1e7-3273-45d0-a070-ebb4f6f3375e" >
+		<http:request method="GET" doc:name="Request" doc:id="65ada4f4-cd10-4c9e-8b75-e1749ea8e4ae" config-ref="HTTP_Request_configuration" path="${coordinatesrequest.path}">
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"key" : "${secure::key}",
+	"format" : "json",
+	"lat" : attributes.queryParams.lat,
+	"lon" : attributes.queryParams.lon
+}]]]></http:query-params>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="39aa73a1-4b47-480f-8622-d4144bbb8af0" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+   "lat" :payload.lat,
+   "lon" :payload.lon,
+    "address" :payload.address
+   
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<choice doc:name="Choice" doc:id="f458e7fe-ae5e-4862-90b2-31c1a9a7faeb" >
+			<when expression="#[payload.address==null]">
+				<set-variable value="405" doc:name="Set Variable" doc:id="e07c2f33-a522-43bc-863a-72a125063ddc" variableName="HttpStatus"/>
+				<ee:transform doc:name="Transform Message" doc:id="b23d0744-d6ff-4b93-8507-d05ae5eaff36" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+    "message": 	"unable to find the address for this geographic co-ordinates"
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<otherwise >
+				<logger level="DEBUG" doc:name="Logger" doc:id="444761e6-cc45-4cbf-9fbb-6c3d6c36208a" message="address is not null"/>
+			</otherwise>
+		</choice>
+		<logger level="DEBUG" doc:name="Logger" doc:id="e982f800-343f-408d-8dd4-48ce9c43d790" message="#[payload]"/>
+	</flow>
+	<flow name="RoutesFlow" doc:id="48a63e6e-d4e1-452c-87ea-b61611639977" >
+		<http:request method="GET" doc:name="Request" doc:id="16b5c79f-f713-4023-b1b7-faed56670edb" config-ref="HTTP_Request_configuration" path="${routesrequest.path}">
+			<http:query-params ><![CDATA[#[output application/java
+---
+{
+	"key" : "${secure::key}",
+	"maxRoutes" : "${maxRoutes}",
+	"from" : attributes.queryParams.from,
+	"to" : attributes.queryParams.to
+}]]]></http:query-params>
+		</http:request>
+		<ee:transform doc:name="Transform Message" doc:id="78685a7c-2285-45c0-aec2-64c0fb01c8f8" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"startingpointCo-ord": payload.route.boundingBox.lr,
+	"endingpointCo-ord": payload.route.boundingBox.ul,
+	
+		"Directions":
+	{
+		"path": payload.route.legs,
+		"options": payload.route.options,
+		"alternateRoutes":payload.route.alternateRoutes
+	}
+	}
+	]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<choice doc:name="Choice" doc:id="2b0a52b5-b506-4934-a92d-f1a8d90ee4fe" >
+			<when expression="#[payload.Directions.path==null]">
+				<set-variable value="405" doc:name="Set Variable" doc:id="5b1eb765-64f9-4fb7-a877-04220300d1c5" variableName="HttpStatus" />
+				<ee:transform doc:name="Transform Message" doc:id="3aa1b5b3-9e13-4c3c-abad-c4f30043517a">
+					<ee:message>
+						<ee:set-payload><![CDATA[%dw 2.0
+output application/json
+---
+{
+	"message": "sorry, unable to find routes between these locations"
+}]]></ee:set-payload>
+					</ee:message>
+				</ee:transform>
+			</when>
+			<otherwise >
+				<logger level="DEBUG" doc:name="Logger" doc:id="f2861379-4ccc-4c93-aa40-470351e976ec" message="default path"/>
+			</otherwise>
+		</choice>
+		<logger level="DEBUG" doc:name="Logger" doc:id="978ad999-06bf-49af-9ae4-aeb0556edd4b" message="#[payload]"/>
+	</flow>
+</mule>

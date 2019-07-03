@@ -1,0 +1,8 @@
+location:
+http://localhost:8081/api/address?location=chennai,tamilnadu
+
+lat&lon:
+http://localhost:8081/api/geographicCoordinates?lat=14.403345&lon=77.302546
+
+routes:
+http://localhost:8081/api/routes?from=hyderabad,500081&to=bangalore,560037

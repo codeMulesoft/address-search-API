@@ -1,0 +1,991 @@
+{
+    "co-ordinates": {
+        "lr": {
+            "lng": 80.202339,
+            "lat": 12.916892
+        },
+        "ul": {
+            "lng": 77.749741,
+            "lat": 13.197648
+        }
+    },
+    "overview": [
+        {
+            "hasTollRoad": false,
+            "hasBridge": false,
+            "destNarrative": "",
+            "distance": 194.302,
+            "hasTimedRestriction": false,
+            "hasTunnel": false,
+            "hasHighway": true,
+            "index": 0,
+            "formattedTime": "03:45:53",
+            "origIndex": 8,
+            "hasAccessRestriction": false,
+            "hasSeasonalClosure": false,
+            "hasCountryCross": false,
+            "roadGradeStrategy": [
+                []
+            ],
+            "destIndex": -1,
+            "time": 13553,
+            "hasUnpaved": false,
+            "origNarrative": "Go northwest on SH 55.",
+            "maneuvers": [
+                {
+                    "distance": 0.152,
+                    "streets": [
+                        "Poonamalle Road"
+                    ],
+                    "narrative": "Start out going west on Poonamalle Road toward 1st Street.",
+                    "turnType": 0,
+                    "startPoint": {
+                        "lng": 80.202339,
+                        "lat": 13.020247
+                    },
+                    "index": 0,
+                    "formattedTime": "00:00:48",
+                    "directionName": "West",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        4455783,
+                        4455826,
+                        4455797,
+                        87666629,
+                        87666574,
+                        87666604,
+                        87666655,
+                        4455769,
+                        4455767
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 48,
+
+                    "direction": 7
+                },
+                {
+                    "distance": 0.363,
+                    "streets": [],
+                    "narrative": "Turn left.",
+                    "turnType": 6,
+                    "startPoint": {
+                        "lng": 80.200211,
+                        "lat": 13.019524
+                    },
+                    "index": 1,
+                    "formattedTime": "00:01:06",
+                    "directionName": "South",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        8779339,
+                        8782121,
+                        8782151,
+                        8751729
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 66,
+
+                    "direction": 4
+                },
+                {
+                    "distance": 0.025,
+                    "streets": [],
+                    "narrative": "Turn right.",
+                    "turnType": 2,
+                    "startPoint": {
+                        "lng": 80.199249,
+                        "lat": 13.014409
+                    },
+                    "index": 2,
+                    "formattedTime": "00:00:12",
+                    "directionName": "West",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        8751944
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 12,
+
+                    "direction": 7
+                },
+                {
+                    "distance": 0.234,
+                    "streets": [],
+                    "narrative": "Turn left.",
+                    "turnType": 6,
+                    "startPoint": {
+                        "lng": 80.198906,
+                        "lat": 13.014374
+                    },
+                    "index": 3,
+                    "formattedTime": "00:00:57",
+                    "directionName": "South",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        8751600,
+                        8784310,
+                        8865642,
+                        8867128,
+                        8866341,
+                        8866449
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 57,
+
+                    "direction": 4
+                },
+                {
+                    "distance": 0.176,
+                    "streets": [
+                        "Police Office Road"
+                    ],
+                    "narrative": "Turn slight left onto Police Office Road.",
+                    "turnType": 7,
+                    "startPoint": {
+                        "lng": 80.198463,
+                        "lat": 13.011034
+                    },
+                    "index": 4,
+                    "formattedTime": "00:00:40",
+                    "directionName": "South",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        5243611,
+                        5243641
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 40,
+
+                    "direction": 4
+                },
+                {
+                    "distance": 0.087,
+                    "streets": [
+                        "Butt Rd"
+                    ],
+                    "narrative": "Police Office Road becomes Butt Rd.",
+                    "turnType": 0,
+                    "startPoint": {
+                        "lng": 80.198654,
+                        "lat": 13.00863
+                    },
+                    "index": 5,
+                    "formattedTime": "00:00:14",
+                    "directionName": "South",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        21228403
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 14,
+
+                    "direction": 4
+                },
+                {
+                    "distance": 0.159,
+                    "streets": [
+                        "Butt Rd"
+                    ],
+                    "narrative": "Turn right to stay on Butt Rd.",
+                    "turnType": 2,
+                    "startPoint": {
+                        "lng": 80.198586,
+                        "lat": 13.007378
+                    },
+                    "index": 6,
+                    "formattedTime": "00:00:16",
+                    "directionName": "West",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        5842805,
+                        5841718,
+                        5842446
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 16,
+
+                    "direction": 7
+                },
+                {
+                    "distance": 0.099,
+                    "streets": [
+                        "Butt Rd"
+                    ],
+                    "narrative": "Turn right to stay on Butt Rd.",
+                    "turnType": 2,
+                    "startPoint": {
+                        "lng": 80.196236,
+                        "lat": 13.007218
+                    },
+                    "index": 7,
+                    "formattedTime": "00:00:12",
+                    "directionName": "North",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        5842802,
+                        5842788
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 12,
+ 
+                    "direction": 1
+                },
+                {
+                    "distance": 6.135,
+                    "streets": [
+                        "SH 55"
+                    ],
+                    "narrative": "Butt Rd becomes SH 55.",
+                    "turnType": 0,
+                    "startPoint": {
+                        "lng": 80.196281,
+                        "lat": 13.008612
+                    },
+                    "index": 8,
+                    "formattedTime": "00:08:51",
+                    "directionName": "Northwest",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        8785236,
+                        8785200,
+                        8785196,
+                        43382670,
+                        43382590,
+                        43382531,
+                        43382760,
+                        43382708,
+                        43382660,
+                        58136483,
+                        8785338,
+                        8785365,
+                        8785341,
+                        8785315,
+                        8785367,
+                        8785328,
+                        25363705,
+                        25363614,
+                        25363734,
+                        25363744,
+                        25363699,
+                        25363713,
+                        25363719,
+                        83368480,
+                        84052942,
+                        84053040,
+                        25363712,
+                        25363703,
+                        25363708,
+                        25363665,
+                        25363697,
+                        25363741,
+                        83363444,
+                        83323688,
+                        83397514,
+                        81243024,
+                        81243002,
+                        81242987,
+                        81242918,
+                        81284032,
+                        81284088,
+                        85104700,
+                        81242858,
+                        81243023,
+                        81243000,
+                        81243026,
+                        81242971,
+                        81242986,
+                        81243025,
+                        81242974
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 531,
+
+                    "direction": 2
+                },
+                {
+                    "distance": 2.101,
+                    "streets": [
+                        "Trunk Road"
+                    ],
+                    "narrative": "Stay straight to go onto SH55/Trunk Road. Continue to follow Trunk Road.",
+                    "turnType": 0,
+                    "startPoint": {
+                        "lng": 80.11721,
+                        "lat": 13.045081
+                    },
+                    "index": 9,
+                    "formattedTime": "00:03:38",
+                    "directionName": "West",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        81285285,
+                        8558963,
+                        81950855,
+                        21303476,
+                        21303477,
+                        21303447,
+                        21303612,
+                        21303614,
+                        21303615,
+                        21303619,
+                        21303620,
+                        21303621,
+                        21303532,
+                        21303622,
+                        21303596,
+                        21303587,
+                        21303624,
+                        21303625,
+                        54754099,
+                        54753839,
+                        54754118,
+                        54753998,
+                        54753650,
+                        54753912,
+                        54754103,
+                        54754190,
+                        54754191,
+                        54753974,
+                        54754155,
+                        7583954,
+                        100665425
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 218,
+
+                    "direction": 7
+                },
+                {
+                    "distance": 52.358,
+                    "streets": [
+                        "NH48"
+                    ],
+                    "narrative": "Stay straight to go onto NH48.",
+                    "turnType": 0,
+                    "startPoint": {
+                        "lng": 80.087578,
+                        "lat": 13.049072
+                    },
+                    "index": 10,
+                    "formattedTime": "00:58:39",
+                    "directionName": "West",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        100665433,
+                        100650237,
+                        100655299,
+                        100650167,
+                        100650188,
+                        100655283,
+                        100697450,
+                        100650239,
+                        100650266,
+                        100697569,
+                        112167870,
+                        100650267,
+                        100650269,
+                        100650207,
+                        100649515,
+                        100665371,
+                        100674591,
+                        100655578,
+                        100674540,
+                        100649381,
+                        100650227,
+                        100651834,
+                        100662645,
+                        100664911,
+                        100664936,
+                        100744655,
+                        100651498,
+                        100651508,
+                        100651504,
+                        100774969,
+                        100774970,
+                        100740692,
+                        100740485,
+                        100719195,
+                        100662637,
+                        100719194,
+                        100662638,
+                        100709056,
+                        100709039,
+                        100709004,
+                        100709053,
+                        100662649,
+                        100639537,
+                        100662604,
+                        100662547,
+                        100662490,
+                        100662614,
+                        100652685,
+                        100652704,
+                        100709119
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 128,
+                    "time": 3519,
+
+                    "direction": 7
+                },
+                {
+                    "distance": 29.257,
+                    "streets": [
+                        "NH40"
+                    ],
+                    "narrative": "Take NH40.",
+                    "turnType": 2,
+                    "startPoint": {
+                        "lng": 79.386391,
+                        "lat": 12.916892
+                    },
+                    "index": 11,
+                    "formattedTime": "00:33:04",
+                    "directionName": "Northwest",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        98593621,
+                        55035681,
+                        59602694,
+                        59602780,
+                        59602770,
+                        59602880,
+                        59602857,
+                        59602881,
+                        59602884,
+                        59603087,
+                        59602886,
+                        59602891,
+                        59602892,
+                        59602796,
+                        59602674,
+                        59602805,
+                        59602450,
+                        59602781,
+                        59602846,
+                        59602890,
+                        59602357,
+                        59602356,
+                        59601972,
+                        59602665,
+                        59602542,
+                        59602072,
+                        59602462,
+                        59601333,
+                        59602824,
+                        59602715,
+                        59602714,
+                        59602827,
+                        59602496,
+                        59602776,
+                        59602828,
+                        59602469,
+                        59602324,
+                        59602702,
+                        100938653,
+                        103876116,
+                        103876119,
+                        103876124,
+                        103876089,
+                        103876058,
+                        103876041,
+                        103876072,
+                        103876061,
+                        103876125,
+                        103876090,
+                        103876091
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 128,
+                    "time": 1984,
+
+                    "direction": 2
+                },
+                {
+                    "distance": 2.425,
+                    "streets": [
+                        "NH40"
+                    ],
+                    "narrative": "Turn slight left to stay on NH40.",
+                    "turnType": 7,
+                    "startPoint": {
+                        "lng": 79.097061,
+                        "lat": 13.183431
+                    },
+                    "index": 12,
+                    "formattedTime": "00:03:05",
+                    "directionName": "Northwest",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        103875957,
+                        103876092,
+                        103876093,
+                        103876094,
+                        103876095,
+                        103876096,
+                        103876097,
+                        103876121,
+                        103876120,
+                        103875908,
+                        103876049,
+                        100926509
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 128,
+                    "time": 185,
+
+                    "direction": 2
+                },
+                {
+                    "distance": 46.436,
+                    "streets": [
+                        "Old Madras Road"
+                    ],
+                    "narrative": "Stay straight to go onto NH69/Old Madras Road. Continue to follow Old Madras Road.",
+                    "turnType": 0,
+                    "startPoint": {
+                        "lng": 79.065361,
+                        "lat": 13.197648
+                    },
+                    "index": 13,
+                    "formattedTime": "00:51:00",
+                    "directionName": "West",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        89088191,
+                        89087888,
+                        89097681,
+                        89097696,
+                        81750844,
+                        64983348,
+                        64983347,
+                        100901116,
+                        100901182,
+                        103020998,
+                        103021082,
+                        101016733,
+                        100926560
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 128,
+                    "time": 3060,
+
+                    "direction": 7
+                },
+                {
+                    "distance": 3.259,
+                    "streets": [
+                        "NH69"
+                    ],
+                    "narrative": "Turn slight left onto NH69.",
+                    "turnType": 7,
+                    "startPoint": {
+                        "lng": 78.409431,
+                        "lat": 13.17416
+                    },
+                    "index": 14,
+                    "formattedTime": "00:03:54",
+                    "directionName": "South",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        100993155,
+                        103315897,
+                        103315840,
+                        101878656,
+                        101912997,
+                        59590487
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 128,
+                    "time": 234,
+
+                    "direction": 4
+                },
+                {
+                    "distance": 44.458,
+                    "streets": [
+                        "NH75"
+                    ],
+                    "narrative": "Stay straight to go onto NH75.",
+                    "turnType": 0,
+                    "startPoint": {
+                        "lng": 78.379135,
+                        "lat": 13.15377
+                    },
+                    "index": 15,
+                    "formattedTime": "00:49:37",
+                    "directionName": "West",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        100806677,
+                        100806678,
+                        59590459,
+                        100685377,
+                        100806689,
+                        100747277,
+                        65316927,
+                        66907125,
+                        66907126,
+                        66907112,
+                        59590532,
+                        59590485,
+                        59590419,
+                        59590486,
+                        59590488,
+                        35947936,
+                        104963835,
+                        104920866,
+                        105088326,
+                        104963834,
+                        105032110,
+                        104978290,
+                        77844665,
+                        77844664,
+                        77844590,
+                        77844593,
+                        77844656,
+                        77844706,
+                        77844693,
+                        102956496,
+                        102956498,
+                        77844606,
+                        77844724,
+                        77844637,
+                        77844609,
+                        77844625,
+                        77844591,
+                        77844523,
+                        77844494,
+                        54448907,
+                        54448937,
+                        92366273,
+                        54448501,
+                        46482831,
+                        46482787,
+                        46482788,
+                        46482790,
+                        46482791,
+                        50389026,
+                        50389164
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 128,
+                    "time": 2977,
+
+                    "direction": 7
+                },
+                {
+                    "distance": 0.358,
+                    "streets": [],
+                    "narrative": "Take the exit.",
+                    "turnType": 14,
+                    "startPoint": {
+                        "lng": 77.766678,
+                        "lat": 13.055793
+                    },
+                    "index": 16,
+                    "formattedTime": "00:00:51",
+                    "directionName": "Southwest",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        47785533,
+                        47785795,
+                        47785852
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 51,
+
+                    "direction": 6
+                },
+                {
+                    "distance": 4.248,
+                    "streets": [
+                        "SH35"
+                    ],
+                    "narrative": "Turn slight left onto SH35.",
+                    "turnType": 7,
+                    "startPoint": {
+                        "lng": 77.761986,
+                        "lat": 13.053409
+                    },
+                    "index": 17,
+                    "formattedTime": "00:05:46",
+                    "directionName": "South",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        47784669,
+                        47785288,
+                        47785839,
+                        47785841,
+                        65084543,
+                        65084663,
+                        65084573,
+                        65084640,
+                        65084595,
+                        65084623,
+                        65084711,
+                        65084544,
+                        65084576,
+                        65084638,
+                        65084643,
+                        65084609,
+                        65084639,
+                        65084129,
+                        38784457,
+                        38787164,
+                        102029015,
+                        102029017,
+                        38787151,
+                        23444536,
+                        23444614,
+                        23444155,
+                        101896661
+                    ],
+                    "signs": [],
+  
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 346,
+  
+                    "direction": 4
+                },
+                {
+                    "distance": 0.016,
+                    "streets": [
+                        "SH 35"
+                    ],
+                    "narrative": "Turn slight left onto SH 35.",
+                    "turnType": 7,
+                    "startPoint": {
+                        "lng": 77.757668,
+                        "lat": 12.994527
+                    },
+                    "index": 18,
+                    "formattedTime": "00:00:04",
+                    "directionName": "South",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        101896580
+                    ],
+                    "signs": [],
+                   
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 4,
+
+                    "direction": 4
+                },
+                {
+                    "distance": 0.815,
+                    "streets": [
+                        "SH35"
+                    ],
+                    "narrative": "SH 35 becomes SH35.",
+                    "turnType": 0,
+                    "startPoint": {
+                        "lng": 77.757622,
+                        "lat": 12.994301
+                    },
+                    "index": 19,
+                    "formattedTime": "00:01:13",
+                    "directionName": "South",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        101757022,
+                        101757030,
+                        101757031,
+                        101757029,
+                        101757007,
+                        101756753
+                    ],
+                    "signs": [],
+
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 73,
+
+                    "direction": 4
+                },
+                {
+                    "distance": 1.068,
+                    "streets": [
+                        "Whitefield Main Road"
+                    ],
+                    "narrative": "SH35 becomes Whitefield Main Road.",
+                    "turnType": 0,
+                    "startPoint": {
+                        "lng": 77.752472,
+                        "lat": 12.983798
+                    },
+                    "index": 20,
+                    "formattedTime": "00:01:38",
+                    "directionName": "South",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        101896459,
+                        101902568,
+                        104138935,
+                        104138946,
+                        101757014,
+                        101901525,
+                        101757008,
+                        101757047,
+                        101757034,
+                        101756992,
+                        104445808,
+                        104445809,
+                        101757016,
+                        101757035,
+                        101757017,
+                        101757033
+                    ],
+                    "signs": [],
+                 
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 98,
+ 
+                    "direction": 4
+                },
+                {
+                    "distance": 0.073,
+                    "streets": [
+                        "Whitefield Main Road"
+                    ],
+                    "narrative": "Make a U-turn onto Whitefield Main Road.",
+                    "turnType": 8,
+                    "startPoint": {
+                        "lng": 77.749741,
+                        "lat": 12.968608
+                    },
+                    "index": 21,
+                    "formattedTime": "00:00:08",
+                    "directionName": "North",
+                    "maneuverNotes": [],
+                    "linkIds": [
+                        103340996,
+                        103341054,
+                        103341091,
+                        103341089
+                    ],
+                    "signs": [],
+                  
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 8,
+   
+                    "direction": 1
+                },
+                {
+                    "distance": 0,
+                    "streets": [],
+                    "narrative": "Welcome to WHITEFIELD, KARNATAKA 56066.",
+                    "turnType": -1,
+                    "startPoint": {
+                        "lng": 77.749878,
+                        "lat": 12.969615
+                    },
+                    "index": 22,
+                    "formattedTime": "00:00:00",
+                    "directionName": "",
+                    "maneuverNotes": [],
+                    "linkIds": [],
+                    "signs": [],
+                    "transportMode": "AUTO",
+                    "attributes": 0,
+                    "time": 0,
+        
+                    "direction": 0
+                }
+            ],
+            "hasFerry": false
+        }
+    ],
+    "route options": {
+        "arteryWeights": [
+            0,
+            1.2279771759033205,
+            0.9779771759033203,
+            0.95,
+            0.9,
+            0.85
+        ],
+        "cyclingRoadFactor": 1,
+        "timeType": 0,
+        "useTraffic": false,
+        "returnLinkDirections": false,
+        "countryBoundaryDisplay": true,
+        "enhancedNarrative": false,
+        "locale": "en_US",
+        "tryAvoidLinkIds": [],
+        "drivingStyle": 2,
+        "doReverseGeocode": true,
+        "generalize": -1,
+        "mustAvoidLinkIds": [],
+        "sideOfStreetDisplay": true,
+        "routeType": "FASTEST",
+        "avoidTimedConditions": false,
+        "routeNumber": 0,
+        "shapeFormat": "raw",
+        "maxWalkingDistance": -1,
+        "destinationManeuverDisplay": true,
+        "transferPenalty": -1,
+        "narrativeType": "text",
+        "walkingSpeed": -1,
+        "urbanAvoidFactor": -1,
+        "stateBoundaryDisplay": true,
+        "unit": "M",
+        "highwayEfficiency": 22,
+        "maxLinkId": 50,
+        "maneuverPenalty": -1,
+        "avoidTripIds": [],
+        "filterZoneFactor": -1,
+        "manmaps": "true"
+    },
+    "alternate routes": null
+}
